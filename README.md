@@ -15,7 +15,7 @@ La primera ejecución crea `GolBetDB_DisenoSoft` en SQL Server LocalDB y agrega 
 ## Trabajar desde Visual Studio
 
 1. Ejecuta **Detener-GolBet.cmd** si la aplicación ya está abierta desde el lanzador, para liberar el puerto.
-2. Haz doble clic en **Abrir-VisualStudio.cmd**. Abre `GolBet.sln` con el entorno de .NET preparado.
+2. Haz doble clic en **Abrir-VisualStudio.cmd**. Detiene el servidor iniciado por nuestro lanzador, si sigue abierto, y abre `GolBet.sln` con el entorno de .NET preparado.
 3. En el Explorador de soluciones, selecciona **GolBet.Web** como proyecto de inicio.
 4. Selecciona el perfil **GolBet local** y presiona **F5** o **Ctrl+F5**.
 5. Si el navegador no se abre solo, entra a [http://localhost:5229](http://localhost:5229).
@@ -59,3 +59,9 @@ Se implementaron únicamente los módulos 1–6, según lo acordado. Registro, i
 La gestión todavía no tiene autenticación, como indica el módulo 6. Los lanzadores escuchan en `localhost` para trabajar y hacer la demostración en el propio PC.
 
 Consulta [el detalle por módulo](docs/MODULOS.md) y [las comprobaciones realizadas](docs/VALIDACION.md). Ahí también se explica la advertencia de NuGet de AutoMapper 13.0.1, que se conservó para seguir la versión indicada por el curso.
+
+## Si falla al ejecutar desde Visual Studio
+
+- **Class Library cannot be started directly:** selecciona `GolBet.Web` como proyecto de inicio. `GolBet.Entities` no es una aplicación ejecutable.
+- **MSB3027, archivo bloqueado por .NET Host:** detén la depuración y ejecuta `Detener-GolBet.cmd` antes de volver a compilar. No ejecutes simultáneamente el lanzador y Visual Studio sobre la misma carpeta de compilación.
+- **Cannot open database**, seguido de **Cannot create file … because it already exists:** la instancia puede no tener registrada una base cuyos archivos siguen en disco. No borres el `.mdf` ni el `.ldf`. Revisa la instancia indicada en la conexión y adjunta la base existente con SQL Server Management Studio, después de guardar una copia de los archivos si están desconectados. Este problema es distinto al bloqueo de compilación.
