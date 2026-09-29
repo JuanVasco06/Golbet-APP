@@ -1,0 +1,72 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+}
+
+main {
+    flex: 1;
+}
+
+.table img {
+    object-fit: contain;
+}
+
+.team-filter-select {
+    width: 260px;
+    max-width: 100%;
+}
+
+.card img {
+    object-fit: contain;
+}
+
+.field-validation-error,
+.validation-summary-errors {
+    color: #dc3545;
+}
+
+.field-validation-valid,
+.validation-summary-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border-color: #dc3545;
+}
+
+.btn:focus-visible,
+a:focus-visible {
+    outline: 3px solid #86b7fe;
+    outline-offset: 2px;
+}
+
+.empty-state {
+    padding: 48px 12px;
+    text-align: center;
+}
+
+@media (max-width: 575px) {
+    .match-detail-teams h4 {
+        font-size: 1rem;
+    }
+
+    .match-detail-teams img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .match-detail-teams .px-4 {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+    .table td:last-child {
+        white-space: nowrap;
+    }
+}

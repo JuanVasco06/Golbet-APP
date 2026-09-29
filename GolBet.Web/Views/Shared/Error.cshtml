@@ -1,0 +1,5 @@
+@model ErrorViewModel
+@{ ViewData["Title"] = "Error"; }
+<div class="empty-state"><p class="eyebrow">GOLBET</p><h1>No pudimos completar esta acción</h1><p>Intenta nuevamente o vuelve a la cartelera.</p><a class="btn btn-success" asp-controller="Matches" asp-action="Index">Volver a partidos</a>
+@if (Model.ShowRequestId) { <p class="mt-4"><small>Referencia del error: <code>@Model.RequestId</code></small></p> }
+</div>

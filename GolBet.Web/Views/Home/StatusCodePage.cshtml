@@ -1,0 +1,3 @@
+@model int
+@{ ViewData["Title"] = $"Error {Model}"; }
+<div class="empty-state"><p class="eyebrow">GOLBET / @Model</p><h1>@(Model == 404 ? "No encontramos esta página" : "No pudimos procesar la solicitud")</h1><p>Revisa la dirección o vuelve a la cartelera de partidos.</p><a class="btn btn-success" asp-controller="Matches" asp-action="Index">Volver a partidos</a></div>
